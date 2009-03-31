@@ -1,11 +1,11 @@
 Rack::ResponseAssembler
 =======================
 
-Rack::ResponseAssembler piece of middleware that is meant to provide a way for quickly and easily assembling HTTP response documents from many "parts" (other responses). Let's say you want to have your pages built from posts, sidebar and menu - each of these can be returned by separater urls (/posts/1, /sidebar, /menu) and ResponseAssembler will merge it for you.
+Rack::ResponseAssembler is a piece of middleware that is meant to provide a way for quickly and easily assembling HTTP response documents from many "parts" (other responses). Let's say you want to have your pages built from posts, sidebar and menu - each of these can be returned by separate URLs (/posts/1, /sidebar, /menu) and ResponseAssembler will merge it for you into one HTML document.
 
-ResponseAssembler can be used with Rack-Cache. For example, you might want to store your /posts/1 response in cache, and pull interactive (not cached) elements on the page. You can do it in Javascript on the client side, but to make it a bit nicer for google or lynx users (;)) you might want to assemble initial version on server side. We have provided you even a helper that mimicks XMLHttpRequest when you want to replace your current Javascript solution so you don't have to change your controllers!
+ResponseAssembler can be used with Rack-Cache. For example, you might want to store your /posts/1 response in cache, and pull interactive (not cached) elements on the page. You can do it in Javascript on the client side, but to make it a bit nicer for google or lynx users (;)) you might want to assemble initial version on server side. We have provided you even a helper that mimicks XMLHttpRequest when you want to replace your current Javascript solution so you don't have to change your controllers! Rack::ResponseAssembler won't do caching for you, you need to use Rack-Cache instead and teach your app to use it.
 
-This module will never be as big and proffesional as ESI. On the other hand, we do not assume your response is HTML/XML, so you can use ResponseAssembler with CSS, JavaScript, text or CSV files. Please look at example to find out how to specify response mime types that ResponseAssembler should parse. You might want to have a look at [Christoffer Sawicki's Rack::ESI module](http://github.com/Qerub/rack-esi/tree/master), but at time of writing this, it's not complete yet.
+This module will never be as big and proffesional as ESI. On the other hand, we do not assume your response is HTML/XML (or a valid one only), so you can use ResponseAssembler with CSS, JavaScript, text or CSV files. Please look at example to find out how to specify response mime types that ResponseAssembler should parse. You might want to have a look at [Christoffer Sawicki's Rack::ESI module](http://github.com/Qerub/rack-esi/tree/master) for alternative, but at time of writing this, it's not complete yet.
 
 
 Usage
