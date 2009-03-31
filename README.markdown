@@ -37,7 +37,6 @@ TIP: Don't forget to add :layout => false to your /menu /sidebar and /posts/1/co
 
 If you want to use the same logic for future AJAX requests (say for CommentsController), for example to skip rendering layout, you can mimick XMLHttpRequest by using {{{ xhrget /some/ajax/controller }}} instead of normal "get".
 
-
 Options
 -------
 
@@ -51,8 +50,14 @@ and if you want to filter, say - only text/css files for inclusions, use array o
 
     config.middleware.use "Rack::ResponseAssembler", "/* Oops, can't find part of this CSS */", ["text/css"]
 
+TODO:
+=====
+
+* write some tests
+* write example (Sinatra? Rails?) application
+
 Bugs, feature requests, donations etc.
 ======================================
 
-Any bugs, feature requests and other related stuff can be sent to me either usine email hubert.lepicki@amberbit.com or via GitHub message (hubertlepicki). We are happy to receive donations or get hired by you, visit http://www.amberbit.com for details (no, seriously! ;).
+Any bugs, feature requests and other related stuff can be sent to me either usine email hubert.lepicki@amberbit.com or via GitHub message (amberbit). We are happy to receive donations or get hired by you, visit [http://www.amberbit.com](http://www.amberbit.com) for details (no, seriously! ;).
 
